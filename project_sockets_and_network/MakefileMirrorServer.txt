@@ -1,0 +1,15 @@
+OBJS   = MirrorServer.o functions.o
+SOURCE = MirrorServer.c functions.c
+HEADER = functions.h
+OUT    = MirrorServer
+CC     = gcc
+FLAGS  = -c
+
+all:  $(OBJS)
+	$(CC) -o $(OUT)  $(OBJS) -lpthread
+
+MirrorServer.o: MirrorServer.c
+	$(CC) $(FLAGS) MirrorServer.c
+
+functions.o: functions.c
+	$(CC) $(FLAGS) functions.c
